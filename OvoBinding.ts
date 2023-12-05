@@ -1,16 +1,11 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import {
 	AppConfiguration,
+	ErrorResponse,
 	calculateSignature,
 	generateRequestId,
 	generateTimestamp,
 } from "./DokuOvo";
-
-type ErrorResponse = {
-	code: string;
-	message: String;
-	type: String;
-};
 
 export type OvoBindingRequest = {
 	customer: {

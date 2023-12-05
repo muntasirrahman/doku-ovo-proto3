@@ -1,4 +1,3 @@
-import axios, { AxiosError } from "axios";
 import { OvoBindingRequest, OvoBindingResponse } from "./OvoBinding";
 import { createHmac, createHash } from "crypto";
 
@@ -15,7 +14,11 @@ export type AppConfiguration = {
 		payment: string;
 	};
 };
-
+export type ErrorResponse = {
+	code: string;
+	message: String;
+	type: String;
+};
 const Crypto_Algorithm = "SHA256";
 
 export function calculateSignature(
